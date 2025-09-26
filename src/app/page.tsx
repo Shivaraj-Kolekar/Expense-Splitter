@@ -76,15 +76,15 @@ export default function Home() {
   };
 
   // Download card as image
-  const handleDownload = async () => {
-    if (!cardRef.current) return;
-    const html2canvas = (await import("html2canvas")).default;
-    const canvas = await html2canvas(cardRef.current);
-    const link = document.createElement("a");
-    link.download = "split-result.png";
-    link.href = canvas.toDataURL();
-    link.click();
-  };
+  // const handleDownload = async () => {
+  //   if (!cardRef.current) return;
+  //   const html2canvas = (await import("html2canvas")).default;
+  //   const canvas = await html2canvas(cardRef.current);
+  //   const link = document.createElement("a");
+  //   link.download = "split-result.png";
+  //   link.href = canvas.toDataURL();
+  //   link.click();
+  // };
 
   return (
     <div className="max-w-xl mx-auto mt-10">
@@ -162,7 +162,7 @@ export default function Home() {
       </Card>
       {result.length > 0 && (
         <div className="mt-6 flex flex-col items-center">
-          <Card ref={cardRef as any} className="w-full max-w-md">
+          <Card className="w-full max-w-md">
             <CardHeader>Split Result</CardHeader>
             <CardContent>
               <div className="flex flex-col gap-2">
